@@ -1,0 +1,17 @@
+<div class="container mb-4">
+  {% if page_obj.has_other_pages %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center text-center">
+        {% for p in page_obj.paginator.page_range %}
+          {% if page_obj.number == p %}
+            <li class="page-item selected-page me-3">{{ p }}</li>
+          {% else %}
+            <li class="page-item me-3">
+              <a href="?page={{ p }}">{{ p }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>

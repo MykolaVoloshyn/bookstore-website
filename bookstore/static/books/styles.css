@@ -1,0 +1,149 @@
+/* Font Montserrat from fonts.google.com */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* GENERAL STYLING */
+/*Creates global CSS variables that can be reused throughout the file*/
+:root {
+    --main-color: #434a3d;
+    --secondary-color: #d2daca;
+    --text-color: #434a3d;
+    --secondary-text-color: #646b5d;
+    --btn-color: #6c7e68;
+    --btn-text-color: #fff;
+    --main-font-family: "Montserrat", sans-serif;
+}
+
+body {
+    font-family: var(--main-font-family);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* HEADER STYLING */
+.navbar {
+    background-color: var(--secondary-color);
+}
+.navbar-brand {
+    margin-left: -3px;
+    font-size: 40px;
+    color: var(--text-color);
+}
+
+.nav-link {
+    font-size: 25px;
+}
+
+.nav-link img {
+    width: 25px;
+    height: 25px;
+}
+
+/* MAIN PAGE STYLING */
+.card {
+    width: 304px;
+}
+
+.card-img {
+    max-height: 397px;
+}
+
+.card-title {
+    display: inline-block;
+    /* doesn't allow title text to be wrapped to the next line  */
+    white-space: nowrap;
+    overflow: hidden;
+    /* adds ellipsis  when title text is clipped */
+    text-overflow: ellipsis;
+    /* shows only 24 letter characters of title text */
+    max-width: 24ch;
+}
+
+.card-title a {
+    color: var(--text-color);
+}
+
+.btn,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+    color: var(--btn-text-color);
+}
+
+.card-text {
+    color: var(--text-color);
+}
+
+/* PAGINATION STYLING */
+
+.page-item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #434a3d;
+    border-radius: 50%;
+    font-family: var(--bs-body-font-family);
+    font-size: 24px;
+}
+
+.page-item a {
+    display: block;
+    color: var(--text-color);
+}
+
+.selected-page {
+    color: #ffffff;
+    background-color: #434a3d;
+}
+
+/* SEARCH PAGE STYLING */
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem var(--secondary-color);
+}
+
+.box-list li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+.span {
+    color: var(--secondary-text-color);
+}
+
+/* ABOUT BOOK PAGE STYLING */
+
+#book-info {
+    min-height: 650px;
+}
+.description-container ul li {
+    margin: 12px 0;
+}
+.description-container p {
+    font-size: 40px;
+    font-weight: 400;
+    color: #caccc5;
+}
+.description-container span {
+    flex-basis: 50%;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.img-container {
+    width: 500px;
+    height: 650px;
+}
+.img-detail {
+    max-height: 650px;
+    transform: rotate(15deg);
+}

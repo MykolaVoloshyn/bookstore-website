@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Find a book{% endblock %}
+
+{% block content %}
+<div class="container mb-4">
+  <h2>Find a book</h2>
+  <div class="row">
+    {% comment %} sidebar for searching categories {% endcomment %}
+    <div class="col-3">
+      <div class="row">
+        <div class="side-bar">
+          <div class="search-bar">
+            <h5 class="mb-3">By title</h5>
+            <form class="d-flex" method="get">
+              <input type="search" placeholder="Book title..." name="search_name"
+                class="form-control me-3">
+              <button class="btn">
+                <span aria-hidden="true">Search</span>
+              </button>
+          </div>
+
+          <div class="left-side my-4">
+            <h5 class="mb-3">By genre</h5>
+            <ul class="box-list ps-2">
+              {% for genre in genres %}
+              <li>
+                <input type="checkbox" class="checked" name="genre" value="{{ genre.pk }}">
+                <span class="span ">{{ genre }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="left-side my-4">
+            <h5 class="mb-3">By author</h5>
+            <ul class="box-list ps-2">
+              {% for author in authors %}
+              <li>
+                <input type="checkbox" class="checked" name="author" value="{{ author.pk }}">
+                <span class="span ">{{ author }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="left-side my-4">
+            <h5 class="mb-3">By publisher</h5>
+            <ul class="box-list ps-2">
+              {% for publisher in publishers %}
+              <li>
+                <input type="checkbox" class="checked" name="publisher" value="{{ publisher.pk }}">
+                <span class="span">{{ publisher }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} book list {% endcomment %}
+    <div class="col-9">
+      <div class="row row-cols-3">
+        {% for book in page_obj %}
+        <div class="col mb-4">
+          <div class="card">
+            <img src="{{ book.cover.url }}" class="card-img" alt="{{ book.title }} cover">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{% url 'about_book' book.slug %}">{{ book.title }}</a>
+              </h5>
+              <p class="card-text">{{ book.author }}</p>
+              <p class="card-text">{{ book.genre }}</p>
+              <div class="row">
+                <div class="col">
+                  <a href="#" class="btn">Add to Cart</a>
+                </div>
+                <div class="col">
+                  <h5 class="card-text text-end">${{ book.price|floatformat:2 }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% include 'books/pagination.html' %}
+    </div>
+  </div>
+</div>
+{% endblock %}
