@@ -1,0 +1,67 @@
+/* LOGIN PAGE STYLING */
+.window_reg {
+    height: 700px;
+    background-image: url("/media/backgraund.png");
+    background-position: -10px -10px;
+    text-align: center;
+    padding-top: 110px;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.form-field-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.field-container-left {
+    margin-right: 48px;
+    margin-bottom: 16px;
+}
+
+.field-container-right {
+    margin-left: 48px;
+    margin-bottom: 16px;
+}
+
+.form-input {
+    width: 325px;
+}
+
+@media (max-width: 992px) {
+    .field-container-left {
+        margin-right: 20px;
+        margin-bottom: 16px;
+    }
+
+    .field-container-right {
+        margin-left: 20px;
+        margin-bottom: 16px;
+    }
+
+    .form-input {
+        width: 290px;
+    }
+}
+
+@media (max-width: 768px) {
+    .window_reg {
+        padding-top: 0;
+        height: 850px;
+    }
+
+    .form-field-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .field-container-left,
+    .field-container-right {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}

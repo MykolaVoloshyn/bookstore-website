@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "books.apps.BooksConfig",
+    "customers.apps.CustomersConfig",
+    "captcha",
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Login settings
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "main_page"
+LOGGED_OUT_REDIRECT_URL = "main_page"
+
+
+# Captcha settings
+
+CAPTCHA_IMAGE_SIZE = (150, 60)
+CAPTCHA_FONT_SIZE = 30
+CAPTCHA_LETTER_ROTATION = (-20, 20)  # sets the range of the letters angle
+CAPTCHA_LENGTH = 5
