@@ -143,7 +143,15 @@ ul {
     width: 500px;
     height: 650px;
 }
+
 .img-detail {
     max-height: 650px;
     transform: rotate(15deg);
+}
+
+@media (max-width: 992px) {
+    .img-detail {
+        max-height: 450px;
+        transform: rotate(0);
+    }
 }

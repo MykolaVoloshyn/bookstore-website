@@ -1,0 +1,36 @@
+.cart-table {
+    font-size: 20px;
+}
+
+.row-image {
+    height: 150px;
+}
+
+.change-quantity {
+    text-decoration: none;
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.delete-link {
+    text-decoration: none;
+    font-weight: 700;
+    color: #cf4949;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.change-quantity {
+    cursor: pointer;
+}
+
+.shipping-form-fields input {
+    margin: 5px 0;
+    width: 300px;
+}
+
+.order-table {
+    font-size: 18px;
+}

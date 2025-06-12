@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="d-flex justify-content-between mb-3">
+    <div class="me-5">
+      <h4>Books: <strong><span id="total-books-num">{{ order.get_number_of_items }}</span></strong></h4>
+    </div>
+    <div class="ms-5 me-auto">
+      <h4>Total price: <strong> <span id="total-price">${{ order.get_price_of_order|floatformat:2 }}</span></strong></h4>
+    </div>
+    <div>
+      <a class="btn" href="{% url 'confirm_purchase' %}">Make Purchase</a>
+    </div>
+  </div>
+
+  <div class="cart-table">
+    <div class="d-flex text-center">
+      <div class="col-5"><strong>Book</strong></div>
+      <div class="col-2"><strong>Price</strong></div>
+      <div class="col-2"><strong>Quantity</strong></div>
+      <div class="col-2"><strong>Price</strong></div>
+      <div class="col-1"></div>
+    </div>
+    <hr>
+    {% for item in items %}
+    <div class="d-flex text-center">
+      <div class="col-3"><img class="row-image" src="{{ item.book.cover.url }}"></div>
+      <div class="col-2 text-start text-break">
+        <p><a href="{% url 'about_book' item.book.slug %}"
+            style="color: black;">{{ item.book.title }}</a></p>
+      </div>
+      <div class="col-2">
+        <p>${{ item.book.get_price|floatformat:2}}</p>
+      </div>
+      <div class="col-2 d-flex justify-content-center">
+          <a class="change-quantity decrease" data-id="{{ item.book.id }}">&#8722;</a>
+          <p class="mx-3" id="quantity-{{ item.book.id }}">{{ item.quantity }}</p>
+          <a class="change-quantity increase" data-id="{{ item.book.id }}">&#43;</a>
+      </div>
+      <div class="col-2">
+        <p id="price-{{ item.book.id }}">${{ item.get_total_price|floatformat:2}}</p>
+      </div>
+      <div class="col-1">
+        <a class="delete-link" href="{% url 'delete_from_cart' item.pk %}">&#215;</a>
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

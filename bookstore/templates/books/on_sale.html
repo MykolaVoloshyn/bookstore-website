@@ -19,7 +19,7 @@
             <p class="card-text">{{ book.genre }}</p>
             <div class="row">
               <div class="col pt-3">
-                <a href="#" class="btn">Add to Cart</a>
+                <a href="{% url 'add_to_cart' book.pk %}" class="btn">Add to Cart</a>
               </div>
               <div class="col">
                 <h5 class="card-text text-end"><s>${{ book.price|floatformat:2 }}</s></h5>

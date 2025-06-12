@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "books.apps.BooksConfig",
     "customers.apps.CustomersConfig",
     "captcha",
+    "cart.apps.CartConfig",
 ]
 
 MIDDLEWARE = [

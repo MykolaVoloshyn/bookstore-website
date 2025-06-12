@@ -6,12 +6,18 @@ from .models import Customer
 
 def signup(request):
     if request.method == "POST":
+        print("1")
         form = CustomerForm(request.POST)
+        print("2")
+
         if form.is_valid():
-            new_user = form.save()
+            user = form.save()
+            print("3")
+
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=password)
+            print(5)
             first_name = form.cleaned_data["first_name"]
             last_name = form.cleaned_data["last_name"]
             email = form.cleaned_data["email"]
@@ -22,8 +28,11 @@ def signup(request):
                 email=email,
             )
             customer.save()
-            login(request, new_user)
+            print("4")
+            login(request, user)
             return redirect("main_page")
+        else:
+            print("form is not valid")
 
     form = CustomerForm()
     return render(request, "customers/sign_up.html", {"form": form})

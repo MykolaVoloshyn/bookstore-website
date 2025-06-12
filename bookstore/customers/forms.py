@@ -9,6 +9,10 @@ INPUT_FIELD_STYLING = "form-input py-1 px-2 rounded-3 border-0"
 
 class CustomerForm(UserCreationForm):
 
+    class Meta:
+        model = User
+        fields = ("username", "first_name", "last_name", "email", "password1", "password2")
+
     username = forms.CharField(
         widget=forms.TextInput(
             attrs={"placeholder": "Enter username", "class": INPUT_FIELD_STYLING}
@@ -40,10 +44,6 @@ class CustomerForm(UserCreationForm):
         )
     )
     captcha = CaptchaField()
-
-    class Meta:
-        model = User
-        fields = ("username", "first_name", "last_name", "email", "password1", "password2")
 
 
 class LoginForm(AuthenticationForm):

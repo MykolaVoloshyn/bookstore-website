@@ -9,4 +9,4 @@ class Customer(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return f"{self.name} {self.surname}"
+        return f"{self.first_name} {self.last_name}"

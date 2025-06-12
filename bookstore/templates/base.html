@@ -20,6 +20,11 @@
   {% comment %}CSS link{% endcomment %}
   <link type="text/css" rel="stylesheet" href="{% static 'books/styles.css' %}" />
   <link type="text/css" rel="stylesheet" href="{% static 'customers/customers.css' %}" />
+  <link type="text/css" rel="stylesheet" href="{% static 'cart/cart.css' %}" />
+
+  {% comment %} Javascript link {% endcomment %}
+  <script src="{% static 'js/main.js' %}" defer></script>
+
   <meta charset="UTF-8" />
   <link rel="shortcut icon" href="{% static 'icons/books.png' %}" type="image/x-icon">
   <title>
@@ -65,7 +70,7 @@
             <ul class="navbar-nav">
               {% if request.user.is_authenticated %}
                 <li class="nav-item me-2">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="{% url 'shopping_cart' %}">
                     <img src="/static/icons/shopping-basket.png" alt="">
                     Cart
                   </a>
