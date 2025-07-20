@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "customers.apps.CustomersConfig",
     "captcha",
     "cart.apps.CartConfig",
+    "comments.apps.CommentsConfig",
 ]
 
 MIDDLEWARE = [

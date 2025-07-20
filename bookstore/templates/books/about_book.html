@@ -3,7 +3,7 @@
 {% block title %}{{ book }}{% endblock %}
 
 {% block content %}
-<div class="container mb-4">
+<div class="container mb-5">
   <h2>{{ text }}</h2>
   <div class="d-flex justify-content-between">
     <div class="description-container d-flex flex-column justify-content-between" id="book-info">
@@ -34,57 +34,6 @@
 
 </div>
 
-{% comment %} {% if user.is_authenticated %}
-<div class="description-container">
-  <div class="col-6 px-2">
-    <div class="contact-single">
-      <h3 class="mt-2">
-        <strong>Залишити відгук</strong>
-      </h3>
-      <form action="#" method="post" class="mt-4 px-1" id="formReview">
-        {% csrf_token %}
-        <div class="form-group editContent" style="outline: none; cursor: inherit;">
-          <label for="contactcomment" class="editContent"
-            style="outline: none; cursor: inherit;">Ваш коментар*
-          </label>
-          <textarea class="form-control border" rows="5" name="text" id="contactcomment"
-            required=""></textarea>
-        </div>
-        <div class="d-sm-flex justify-content-between">
-          <button type="submit" class="mt-2 btn btn-primary btn-block"
-            style="outline: none; cursor: inherit;">Відправити
-          </button>
-          <div class="col-sm-2 form-group p-0 editContent" style="">
-            <input type="hidden" class="form-control border" name="customer"
-              value="{{ customer.pk }}" required>
-          </div>
-          <div class="col-sm-2 form-group p-0 editContent" style="">
-            <input type="hidden" class="form-control border" name="book" value="{{ book.pk }}"
-              required>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-  {% endif %}
+{% include "comments/comments.html" %}
 
-  <div class="col-6 px-2">
-    {% for comment in book.comment_set.all %}
-    <div class="media mt-2 py-3 px-1">
-      <div class="row">
-        <div class="col-md-auto">
-          <img src="/static/books/icons/comment.png" class="img-fluid" alt="image"
-            style="float: left; width: 45px; height: 45px;">
-        </div>
-        <div class="col-10">
-          <div class="media-body">
-            <h5 class="mt-0 editContent">{{ comment.customer }}</h5>
-            <p class="mt-2 editContent">{{ comment.text }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div> {% endcomment %}
 {% endblock %}

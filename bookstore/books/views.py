@@ -1,5 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
+from comments.forms import CommentForm
 from .models import Author, Book, Genre, Publisher
 from django.core.paginator import Paginator
 from django.shortcuts import render
@@ -95,14 +96,15 @@ def search(request):
 def about_book(request, slug):
     book = get_object_or_404(Book, slug=slug)
 
-    # if request.user.is_authenticated:
-    #     customer = request.user.customer
-    #     form = CommentForm()
-    #     context = {
-    #         "book": book,
-    #         "form": form,
-    #         "customer": customer,
-    #     }
-    #     return render(request, "books/details.html", context)
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        form = CommentForm()
+        context = {
+            "text": "About this book",
+            "book": book,
+            "form": form,
+            "customer": customer,
+        }
+        return render(request, "books/about_book.html", context)
 
     return render(request, "books/about_book.html", {"book": book, "text": "About this book"})

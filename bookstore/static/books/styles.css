@@ -150,6 +150,10 @@ ul {
 }
 
 @media (max-width: 992px) {
+    .img-container {
+        width: 324px;
+    }
+
     .img-detail {
         max-height: 450px;
         transform: rotate(0);

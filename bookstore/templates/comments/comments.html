@@ -1,0 +1,62 @@
+<div class="container">
+  {% if user.is_authenticated %}
+  <div class="col-12 col-lg-6">
+    <div class="contact-single">
+      <h3 class="mt-2">
+        <strong>Leave a comment</strong>
+      </h3>
+      <form action="{% url 'add_comment' book.pk %}" method="post" class="mt-4 px-1"
+        id="formReview">
+        {% csrf_token %}
+        <div class="form-group editContent" style="outline: none; cursor: inherit;">
+          <label for="contactcomment" class="editContent"
+            style="outline: none; cursor: inherit;">Your comment*
+          </label>
+          <textarea class="form-control border" rows="5" name="text" id="contactcomment"
+            required=""></textarea>
+        </div>
+        <div class="d-sm-flex justify-content-between">
+          <button type="submit" class="mt-2 btn btn-block"
+            style="outline: none; cursor: inherit;">Submit
+          </button>
+          <div class="col-sm-2 form-group p-0 editContent" style="">
+            <input type="hidden" class="form-control border" name="customer"
+              value="{{ customer.pk }}" required>
+          </div>
+          <div class="col-sm-2 form-group p-0 editContent" style="">
+            <input type="hidden" class="form-control border" name="book" value="{{ book.pk }}"
+              required>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="col-12 col-lg-6 mt-5">
+    {% for comment in book.comment_set.all %}
+    <div class="mt-2 py-1 px-1 comment-body">
+      <div class="row">
+        <div class="col-1">
+          <img src="/static/icons/comment.png" alt="user image"
+            style="float: left; width: 45px; height: 45px;">
+        </div>
+        <div class="col-9">
+          <h5 class="mt-0">{{ comment.customer }}</h5>
+          <p class="mt-2" id="comment-text-{{ comment.id }}">{{ comment.text }}</p>
+        </div>
+        {% if comment.customer == customer %}
+        <div class="col-2 d-flex justify-content-between">
+          <a href="" class="edit-btn ms-4" data-id="{{ comment.id }}">
+            <img class="comment-button" src="/static/icons/pencil.png" alt="edit button">
+          </a>
+          <a href="" class="delete-button" data-id="{{ comment.id }}">
+            <img class="comment-button" src="/static/icons/trash.png" alt="delete-button">
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

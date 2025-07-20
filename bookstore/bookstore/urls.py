@@ -26,6 +26,7 @@ urlpatterns = [
     path("customer/", include("customers.urls")),
     path("captcha/", include("captcha.urls")),
     path("cart/", include("cart.urls")),
+    path("comments/", include("comments.urls")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
