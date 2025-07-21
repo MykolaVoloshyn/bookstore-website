@@ -34,3 +34,7 @@
 .order-table {
     font-size: 18px;
 }
+
+.drop-footer {
+    min-height: calc(100vh - 234px);
+}
