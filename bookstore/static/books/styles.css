@@ -106,6 +106,40 @@ ul {
     background-color: #434a3d;
 }
 
+/* FOOTER STYLING */
+.footer-container {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--main-color);
+}
+.footers-height {
+    height: 124px;
+}
+
+.footer-container span {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--btn-text-color);
+}
+
+.footer-img {
+    margin-top: 7px;
+}
+
+.footer-container ul a {
+    font-size: 35px;
+    color: var(--btn-text-color);
+}
+
+.footer-container a {
+    color: var(--btn-text-color);
+}
+
+.footer-container a:hover {
+    color: var(--secondary-color);
+}
+
 /* SEARCH PAGE STYLING */
 .form-control:focus {
     border-color: var(--secondary-color);
@@ -157,5 +191,12 @@ ul {
     .img-detail {
         max-height: 450px;
         transform: rotate(0);
+    }
+
+    .footer-container span {
+        font-size: 20px;
+    }
+    .footer-container ul a {
+        font-size: 30px;
     }
 }
