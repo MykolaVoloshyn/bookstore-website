@@ -1,0 +1,89 @@
+ {% extends 'base.html' %}
+
+ {% block title %}Contact Us{% endblock %}
+
+ {% block content %}
+ {% comment %} CONTACT INFO {% endcomment %}
+ <div class="container mb-5">
+   <div class="row">
+     <div class="col-md-10 offset-md-1">
+       <div class="contact_inner">
+         <div class="row">
+           <div class="col-9 col-lg-10">
+             <div class="contact_form_inner">
+               <div class="contact_field">
+                 <h3>Contact Us</h3>
+                 <p>Feel free to contact us at any time. We will respond as soon as we can!</p>
+                 <form action="{% url 'contact_us' %}" method="post">
+                   {% csrf_token %}
+                   <input type="text" class="form-control" name="name"
+                     placeholder="Your Name" />
+                   <input type="text" class="form-control" name="email"
+                     placeholder="Email Address" />
+                   <textarea class="form-control" name="message"
+                     placeholder="Your Message"></textarea>
+                   <button type="submit" class="contact_form_submit">Send</button>
+                 </form>
+               </div>
+             </div>
+           </div>
+           <div class="col-3 col-lg-2">
+             <div class="right_contact_social_icons d-flex align-items-end">
+               <div class="social_icons d-flex">
+                 <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                 </li>
+                 <li>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                 <li>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="contact_info_sec">
+           <h4>Contact information</h4>
+           <div class="d-flex info_single align-items-center">
+             <i class="fas fa-headset"></i>
+             <span>{{contact_info.phone_info}}</span>
+           </div>
+           <div class="d-flex info_single align-items-center">
+             <i class="fas fa-envelope-open-text"></i>
+             <span>{{contact_info.email_info}}</span>
+           </div>
+           <div class="d-flex info_single align-items-center">
+             <i class="fas fa-map-marked-alt"></i>
+             <span>400+ book partners and 65+ servicing cities in the US and Canada.</span>
+           </div>
+
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ {% comment %} MAP SECTION {% endcomment %}
+ <div class="container mb-4">
+   <div class="row">
+     <div class="col-md-10 offset-md-1">
+       <div class="map_inner">
+         <h4>Find us on Google map</h4>
+         <p>The BookStore chain has a special concept and a clearly defined position. We stand out
+           among most bookstore chains because we offer the best service.</p>
+         <div class="map_bind">
+           <iframe
+             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3050.0960073462506!2d-122.20089907957154!3d47.49776499999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906819d4ead7f1%3A0x1717a11b6119e1d5!2s829%20N%2010th%20Pl%2C%20Renton%2C%20WA%2098057!5e1!3m2!1sen!2sus!4v1752988215811!5m2!1sen!2sus"
+             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+             referrerpolicy="no-referrer-when-downgrade">
+           </iframe>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ </section>
+
+{% endblock %}
+

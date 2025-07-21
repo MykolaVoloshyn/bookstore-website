@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "captcha",
     "cart.apps.CartConfig",
     "comments.apps.CommentsConfig",
+    "contact_us.apps.ContactUsConfig",
 ]
 
 MIDDLEWARE = [

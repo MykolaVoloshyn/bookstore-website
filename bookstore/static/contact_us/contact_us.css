@@ -1,0 +1,151 @@
+.contact_inner {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    border: solid 1px #b2b4b0;
+    box-shadow: 20px 22px 44px #cccc;
+    border-radius: 25px 0 0 25px;
+}
+.contact_field {
+    padding: 60px 340px 90px 100px;
+}
+.right_contact_social_icons {
+    height: 100%;
+    background: linear-gradient(to right, #434a3d 20%, #576948 60%, #6c7e68 90%);
+}
+
+.contact_field h3 {
+    color: #000;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact_field p {
+    display: inline-block;
+    width: 80%;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+.form-control {
+    width: 80%;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: 2px solid #1325e8;
+}
+.form-control::placeholder {
+    font-size: 16px;
+}
+
+.contact_info_sec {
+    position: absolute;
+    background-color: #2d2d2d;
+    right: 1px;
+    top: 13%;
+    height: 340px;
+    width: 340px;
+    padding: 40px;
+    border-radius: 25px 0 0 25px;
+}
+.contact_info_sec h4 {
+    padding-bottom: 15px;
+    color: #ffffff;
+}
+
+.info_single {
+    margin: 30px 0px;
+}
+.fas {
+    margin-right: 15px;
+    color: #ffffff;
+}
+.info_single span {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+button.contact_form_submit {
+    background: linear-gradient(to right, #434a3d 10%, #576948 60%, #6c7e68 90%);
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    width: 50%;
+    margin-top: 25px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.social_icons {
+    padding-bottom: 10px;
+}
+
+.social_icons li {
+    list-style: none;
+}
+
+.fab {
+    color: #ffffff;
+    margin: 0px 15px;
+    font-size: 20px;
+}
+
+.map_inner {
+    width: 90%;
+    margin: 0 auto;
+}
+.map_inner h4,
+.map_inner p {
+    color: #000;
+    text-align: center;
+}
+.map_inner p {
+    font-size: 13px;
+}
+.map_bind {
+    margin-top: 30px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+@media (max-width: 992px) {
+    .contact_inner {
+        border-radius: 25px;
+    }
+
+    .contact_field {
+        padding: 30px 0 45px 30px;
+    }
+
+    .contact_field p,
+    .form-control {
+        width: 100%;
+    }
+
+    .right_contact_social_icons {
+        border-radius: 0 22px 0 0;
+    }
+
+    .fab {
+        margin: 0px 9px;
+    }
+
+    .contact_info_sec {
+        position: static;
+        width: 100%;
+        height: 290px;
+        border-radius: 0 0 22px 22px;
+    }
+
+    .contact_info_sec h4 {
+        padding-bottom: 0;
+    }
+}
