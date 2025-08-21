@@ -66,6 +66,10 @@ ul {
 }
 
 .card-title a {
+    display: inline-block;
+    width: 270px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: var(--text-color);
 }
 
@@ -111,6 +115,7 @@ ul {
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 24px;
     background-color: var(--main-color);
 }
 .footers-height {
@@ -181,6 +186,11 @@ ul {
 .img-detail {
     max-height: 650px;
     transform: rotate(15deg);
+}
+
+.annotation {
+    display: block;
+    width: 90%;
 }
 
 @media (max-width: 992px) {

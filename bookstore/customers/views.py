@@ -5,6 +5,8 @@ from .models import Customer
 
 
 def signup(request):
+    form = CustomerForm()
+
     if request.method == "POST":
         print("1")
         form = CustomerForm(request.POST)
@@ -34,5 +36,4 @@ def signup(request):
         else:
             print("form is not valid")
 
-    form = CustomerForm()
     return render(request, "customers/sign_up.html", {"form": form})

@@ -16,7 +16,7 @@
               {{ book.publisher.city }}</span></li>
           <li><span><b>Year:</b> {{ book.year }}</span></li>
           <li><span><b>Pages:</b> {{ book.pages }}</span></li>
-          <li><span><b>Annotation:</b> {{ book.description }}</span></li>
+          <li><span class="annotation"><b>Annotation:</b> {{ book.annotation }}</span></li>
           {% if book.in_stock %}
           <li><span><b>Available now.</b> </span>
             {% endif %}

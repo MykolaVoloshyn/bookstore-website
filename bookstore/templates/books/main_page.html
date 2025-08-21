@@ -9,7 +9,7 @@
 
     {% comment %} displays list of books {% endcomment %}
     {% for book in page_obj %}
-      <div class="col mb-4">
+      <div class="col col-lg-3 mb-4">
         <div class="card">
           <img src="{{ book.cover.url }}" class="card-img" alt="{{ book.title }} cover">
           <div class="card-body">
