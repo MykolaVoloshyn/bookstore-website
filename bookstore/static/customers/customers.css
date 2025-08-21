@@ -1,6 +1,6 @@
 /* LOGIN PAGE STYLING */
 .window_reg {
-    height: 700px;
+    min-height: 700px;
     background-image: url("/media/backgraund.png");
     background-position: -10px -10px;
     text-align: center;
